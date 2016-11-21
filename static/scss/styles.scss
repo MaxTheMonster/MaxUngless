@@ -5,29 +5,66 @@
   padding: 0;
 }
 
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
 .header {
   padding: 2em;
-  h1 {
-    font-family: 'Roboto', sans-serif;
-  }
   text-align: center;
 }
 
+.card {
+  margin: 2.5%;
+  flex-grow: 1;
+  max-width: 100%;
+  box-shadow: 0 6px #FFD200;
+  padding: 1.5em;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.2);
+
+  a {
+    color: rgba(0,0,0,0.8);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+
 .container {
-  width: 50%;
+  width: 60%;
   display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
   justify-content: center;
 
   .description {
-    flex-grow: 1;
-    border-radius: 2px;
-    padding: 1.5em;
-    border: 1px solid #FFC107;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.19), 0 8px 17px rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
+    flex-grow: 2;
+  }
 
-    p {
-      font-family: 'Raleway', sans-serif;
+  .live {
+    text-align: center;
+    flex-grow: 2;
+
+    h2 {
+      padding: 0.5em 0;
+    }
+  }
+  .post {
+    float: left;
+    margin: 2.5%;
+    max-width: 45%;
+    flex-grow: 1;
+
+    h2 {
+      padding: 0.5em 0;
     }
   }
 }

@@ -2,8 +2,26 @@
 
 {% block content %}
 <div class="container">
-  <div class="description">
+  <div class="description card">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus voluptatem enim dolorem quibusdam id possimus debitis provident ut vel incidunt vitae eius reprehenderit, eveniet minima rerum eum illo omnis sed.</p>
   </div>
+
+  <div class="live card">
+    <h2>LiveCoding</h2>
+
+    <iframe src="https://www.livecoding.tv/maxthemonster/embed" width="560" height="315" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+    <p>I often livestream on <a href="http://livecoding.tv/maxthemonster">LiveCoding.tv</a>. Catch me when I stream!</p>
+
+  </div>
+
+  <div class="post card">
+    <a href="/work"><h2>Check out my work</h2></a>
+  </div>
+  {% for post in posts %}
+  <div class="post card">
+    <a href="/posts/{{ post.slug }}"><h2>{{ post.title }}</h2></a>
+  </div>
+  {% endfor %}
+
 </div>
 {% endblock %}
