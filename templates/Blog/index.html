@@ -3,23 +3,49 @@
 {% block content %}
 <div class="container">
   <div class="description card">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus voluptatem enim dolorem quibusdam id possimus debitis provident ut vel incidunt vitae eius reprehenderit, eveniet minima rerum eum illo omnis sed.</p>
+    <div class="inner">
+      <p>I am an aspiring web and software developer
+    in London.
+    I originally sarted coding 5 years ago with a visual tool called
+    <a href="http://scratch.mit.edu">Scratch</a>.
+    Now I prefer to code in languages such as
+    PHP, SQL, HTML, C#, CSS and a few others.
+    I have mentored at <a href="http://coderdojo.com">CoderDojos</a>
+     and competed in 4 <a href="http://www.yrs.io/festival">
+     Festival of code</a> competitionns. You can check
+     me out over <a href="http://www.bbc.co.uk/news/education-28990191">
+     on the BBC</a>
+     talking about myself and the change in the UK education system and at the
+     <a href="http://tech.osper.io/post/95466827667/our-newest-developer-is-ten-years-old">
+     Osper tech blog</a></p>
+    </div>
   </div>
 
   <div class="live card">
-    <h2>LiveCoding</h2>
-
-    <iframe src="https://www.livecoding.tv/maxthemonster/embed" width="560" height="315" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-    <p>I often livestream on <a href="http://livecoding.tv/maxthemonster">LiveCoding.tv</a>. Catch me when I stream!</p>
-
+    <div class="inner">
+      <h2>LiveCoding</h2>
+      <div class="livecoding">
+        <iframe src="https://www.livecoding.tv/maxthemonster/embed" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+      </div>
+      <p>I often livestream on <a href="http://livecoding.tv/maxthemonster">LiveCoding.tv</a>. Catch me when I stream!</p>
+    </div>
   </div>
 
   <div class="post card">
-    <a href="/work"><h2>Check out my work</h2></a>
+    <a href="/work">
+      <div class="inner">
+        <h2>Check out my work</h2>
+      </div>
+    </a>
   </div>
   {% for post in posts %}
   <div class="post card">
-    <a href="/posts/{{ post.slug }}"><h2>{{ post.title }}</h2></a>
+    <a href="/posts/{{ post.slug }}">
+    <div class="inner">
+      <h2>{{ post.title }}</h2>
+      <h4>{{ post.published }}</h4>
+    </div>
+    </a>
   </div>
   {% endfor %}
 
