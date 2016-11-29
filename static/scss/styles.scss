@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+@import "prism";
 
 * {
   margin: 0;
   padding: 0;
 }
-
 h1, h2, h3, h4 {
   font-family: 'Roboto', sans-serif;
 }
 
-p {
+p, li {
   font-family: 'Raleway', sans-serif;
 }
 
 #title {
-
   a {
     color: rgba(0,0,0,0.8);
 
@@ -23,8 +22,17 @@ p {
     }
   }
 }
+
+#topic_title {
+  font-family: Raleway;
+  flex-grow: 2;
+  width: 100%;
+  margin-left: 1.5em;
+}
+
 a {
-  color: blue;
+  color: #2a7ae2;
+  font-family: Raleway;
   text-decoration: none;
 
   &:hover {
@@ -39,16 +47,19 @@ a {
 }
 
 .card {
-  margin: 2.5%;
+  margin: 1.5em 2.5em;
   flex-grow: 1;
-  box-shadow: 0 6px #FFD200;
   border-radius: 2px;
   border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: 0 6px #FFD200;
   transition: 0.3s;
-
 
   .inner {
     padding: 2em;
+  }
+
+  h3.url {
+    color: green;
   }
 
   a {
@@ -79,9 +90,10 @@ a {
 
   .description {
     flex-grow: 2;
+    animation-name: none;
 
     a {
-      color: blue;
+      color: #2a7ae2;
       text-decoration: none;
 
       &:hover {
@@ -93,12 +105,13 @@ a {
 
   .live {
     width: 100%;
+    animation-name: none;
     text-align: center;
     flex-grow: 2;
 
     p {
       a {
-        color: blue;
+        color: #2a7ae2;
         text-decoration: none;
 
         &:hover {
@@ -116,10 +129,9 @@ a {
       padding-bottom: 56.25%;
       position: relative;
       height: 0;
-      overflow: hidden;
       margin-bottom: 1em;
 
-      iframe {
+      img {
         position: absolute;
         top: 0;
         left: 0;
@@ -130,7 +142,7 @@ a {
   }
   .post {
     flex-grow: 1;
-    margin: 2.5%;
+    margin: 2.5em;
     width: 30%;
 
     &:hover {
@@ -142,8 +154,26 @@ a {
   }
 
   .article {
+    word-wrap: break-word;
+
+    .buttons {
+      position: fixed;
+      top: 2em;
+      left: 1em;
+
+      .back {
+        font-size: 17px;
+        font-weight: lighter;
+        padding: 1em;
+        background: white;
+        border: 1px solid rgba(0,0,0,0.2);
+        border-radius: 3px;
+      }
+    }
+
+
     a {
-      color: blue;
+      color: #2a7ae2;
       text-decoration: none;
 
       &:hover {
@@ -157,37 +187,81 @@ a {
       }
     }
 
+    .topic {
+      font-family: Raleway;
+      text-align: left !important;
+      color: rgba(0,0,0,0.8);
+      font-weight: lighter;
+
+      a {
+        color: #FFD200;
+      }
+    }
+
     .content {
       text-align: left;
+      word-spacing: 0.2em;
+      line-height: 1.2em;
+      word-wrap: break-word;
 
       p {
-        font-size: 16px;
-        text-indent: 1.5em;
-        line-height: 1.5;
-        word-spacing: 0.3em;
-        padding: 1em;
+        line-spacing: 0.5em;
+        word-spacing: 0.4em;
+        line-height: 1.3em;
+      }
+
+      h3, ul, li, h2, a, h1, p {
+        margin-top: 1em;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+
+      h3 {
+        font-size: 26px;
+      }
+
+      h4 {
+        font-size: 20px;
+      }
+
+      li {
+        margin-left: 1.5em;
       }
     }
   }
 }
 
 @media screen and (max-width: 550px) {
-  .card {
-    margin: 2.5% 0;
+  #topic_title {
+    margin-left: 0.2em;
   }
-
+  .card {
+    margin: 1em 0.2em;
+  }
   .container {
+
     .post {
-      margin: 2.5% 0;
+      margin: 1em 0;
       flex-grow: 2;
       width: 60%;
     }
 
     .article {
-      .content {
-        p {
-          padding: 1em 0.1em;
+      .buttons {
+        position: auto;
+        .back {
+          padding: 0;
+          border: 0;
+          background: transparent;
         }
+      }
+      .inner {
+        padding: 1em;
+      }
+      .content {
+        font-size: 15px;
       }
     }
   }

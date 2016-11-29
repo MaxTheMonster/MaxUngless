@@ -1,0 +1,17 @@
+{% extends "Blog/base.html" %}
+
+{% block title %}| Topics{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% for topic in topics %}
+  <div class="card">
+    <div class="inner">
+      <a href="/topics/{{ topic.name|lower }}">
+        <h1>{{ topic.name }}</h1>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,23 +1,11 @@
 {% extends "Blog/base.html" %}
+{% load staticfiles %}
 
 {% block content %}
 <div class="container">
   <div class="description card">
     <div class="inner">
-      <p>I am an aspiring web and software developer
-    in London.
-    I originally sarted coding 5 years ago with a visual tool called
-    <a href="http://scratch.mit.edu">Scratch</a>.
-    Now I prefer to code in languages such as
-    PHP, SQL, HTML, C#, CSS and a few others.
-    I have mentored at <a href="http://coderdojo.com">CoderDojos</a>
-     and competed in 4 <a href="http://www.yrs.io/festival">
-     Festival of code</a> competitionns. You can check
-     me out over <a href="http://www.bbc.co.uk/news/education-28990191">
-     on the BBC</a>
-     talking about myself and the change in the UK education system and at the
-     <a href="http://tech.osper.io/post/95466827667/our-newest-developer-is-ten-years-old">
-     Osper tech blog</a></p>
+      <p>My name is Max Ungless and I am an aspiring web and software developer living in London. I began programming 5 years ago with a visual tool called <a href="http://scratch.mit.edu">Scratch</a> and since then my obsession with <a href="/topics/coding">programming</a> has only grown. Now I specialise in building web applications with a wide array of languages including HTML, CSS, JavaScript, Django (Python), and PHP. I have built several websites and applications, which you can check out at <a href="/work">My Work</a> that have not only made my days fun, but helped others. Whilst not endlessly coding, I enjoy writing with my fountain pens, a particularly fun passtime of mine which you can read some articles about down below and I also study. (Not to say that it's a hobby, but rather something I am obligated to do.) You can also read articles about that below.</p>
     </div>
   </div>
 
@@ -25,7 +13,9 @@
     <div class="inner">
       <h2>LiveCoding</h2>
       <div class="livecoding">
-        <iframe src="https://www.livecoding.tv/maxthemonster/embed" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+      <a href="http://livecoding.tv/maxthemonster">
+        <img src="{% static "livecoding.png" %}" alt="LiveCoding.tv Stream">
+      </a>
       </div>
       <p>I often livestream on <a href="http://livecoding.tv/maxthemonster">LiveCoding.tv</a>. Catch me when I stream!</p>
     </div>

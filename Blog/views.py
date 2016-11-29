@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from .models import Post
+from .models import Post, Topic
 from django.http import Http404
 
-# Create your views here.
 
 def index(request):
     posts = Post.objects.all()
+
+    if not posts:
+        posts = {}
     return render(request, "Blog/index.html", {"posts": posts})
 
 def view_post(request, post_slug):
@@ -18,5 +20,15 @@ def view_post(request, post_slug):
 
     return render(request, "Blog/post.html", {"post": post})
 
-def work(request):
-    return render(request, "Blog/work.html")
+def view_topics(request):
+    topics = Topic.objects.all()
+    return render(request, "Blog/topics.html", {"topics": topics})
+
+def topic(request, user_topic):
+    print(user_topic)
+    user_topic = user_topic.title()
+    articles = Post.objects.filter(topic__name=user_topic)
+
+    if not articles:
+        articles = []
+    return render(request, "Blog/topic.html", {"articles": articles, "topic": user_topic})

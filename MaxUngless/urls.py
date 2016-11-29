@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from Blog import views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
+    url(r'^topics/$', views.view_topics),
+    url(r'^topics/(?P<user_topic>.+)/', views.topic),
     url(r'^posts/(?P<post_slug>.+)/', views.view_post),
-    url(r'^work/', views.work),
+    url(r'^work/', TemplateView.as_view(template_name="Blog/work.html")),
 ]
