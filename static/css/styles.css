@@ -116,6 +116,11 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 * {
   margin: 0;
   padding: 0; }
@@ -125,10 +130,55 @@ h1, h2, h3, h4 {
 
 p, li {
   font-family: 'Raleway', sans-serif; }
+  p a, li a {
+    color: #2a7ae2;
+    font-family: Raleway;
+    text-decoration: none;
+    position: relative; }
+  p a:hover, li a:hover {
+    color: #2a7ae2;
+    text-decoration: none !important; }
+  p a:before, li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0em;
+    background-color: #FFC107;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; }
+  p a:hover:before, li a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); }
+
+.contact h2 {
+  margin-top: 1em;
+  font-weight: normal; }
+  .contact h2 strong {
+    font-weight: bolder; }
+
+#contact {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 5.5em;
+  transition: 0.2s; }
+
+#contact-badge:hover + #contact {
+  display: inline;
+  opacity: 1;
+  transition: 0.3s; }
 
 #title a {
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none; }
   #title a:hover {
+    text-decoration: underline;
     color: #FFD200; }
 
 #topic_title {
@@ -137,20 +187,19 @@ p, li {
   width: 100%;
   margin-left: 1.5em; }
 
-a {
-  color: #2a7ae2;
-  font-family: Raleway;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline;
-    color: black; }
-
 .header {
   padding: 2em;
   text-align: center; }
+  .header h4 {
+    display: inline; }
+  .header i {
+    margin: 0.3em;
+    color: black; }
+    .header i:hover {
+      color: #FFD200; }
 
 .card {
-  margin: 1.5em 2.5em;
+  margin: 0.5em 2.5em;
   flex-grow: 1;
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -212,7 +261,7 @@ a {
         height: 100%; }
   .container .post {
     flex-grow: 1;
-    margin: 2.5em;
+    margin: 1em 2.5em;
     width: 30%; }
     .container .post:hover {
       -webkit-box-shadow: 10px 5px 0px 0px #ffd200;
@@ -268,6 +317,10 @@ a {
         margin-left: 1.5em; }
 
 @media screen and (max-width: 550px) {
+  #contact-badge:hover + #contact {
+    display: none;
+    transition: 0.3s; }
+
   #topic_title {
     margin-left: 0.2em; }
 

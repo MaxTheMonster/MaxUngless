@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^topics/(?P<user_topic>.+)/', views.topic),
     url(r'^posts/(?P<post_slug>.+)/', views.view_post),
     url(r'^work/', TemplateView.as_view(template_name="Blog/work.html")),
+    url(r'^contact/', TemplateView.as_view(template_name="Blog/contact.html")),
 ]
