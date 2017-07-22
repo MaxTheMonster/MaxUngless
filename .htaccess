@@ -1,0 +1,12 @@
+
+AddHandler fcgid-script .fcgi
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ MaxUngless.fcgi/$1 [QSA,L]
+
+<IfModule mod_expires.c>
+   ExpiresActive on
+   ExpiresDefault "access plus 1 month"
+   ExpiresByType application/javascript "access plus 1 year"
+   ExpiresByType image/x-ico "access plus 1 year"
+   ExpiresByType text/css "access plus 14 days"
+</IfModule>

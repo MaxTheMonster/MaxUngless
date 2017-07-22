@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto");
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+php+python+scss */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -126,13 +126,19 @@ pre[class*="language-"] {
   padding: 0; }
 
 h1, h2, h3, h4 {
-  font-family: 'Roboto', sans-serif; }
+  font-family: "Roboto", sans-serif; }
+
+p {
+  line-height: 180%;
+  font-size: 20px;
+  font-weight: 100; }
 
 p, li {
-  font-family: 'Raleway', sans-serif; }
+  font-weight: 300;
+  font-family: "Lato", sans-serif; }
   p a, li a {
     color: #2a7ae2;
-    font-family: Raleway;
+    font-family: "Lato", sans-serif;
     text-decoration: none;
     position: relative; }
   p a:hover, li a:hover {
@@ -182,7 +188,7 @@ p, li {
     color: #FFD200; }
 
 #topic_title {
-  font-family: Raleway;
+  font-family: "Lato", sans-serif;
   flex-grow: 2;
   width: 100%;
   margin-left: 1.5em; }
@@ -204,10 +210,17 @@ p, li {
   border-radius: 2px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 6px #FFD200;
-  transition: 0.3s; }
+  transition: 0.3s;
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word; }
   .card .inner {
     padding: 2em; }
   .card h3.url {
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+    display: inline;
     color: green; }
   .card a {
     color: rgba(0, 0, 0, 0.8);
@@ -277,6 +290,7 @@ p, li {
       .container .article .buttons .back {
         font-size: 17px;
         font-weight: lighter;
+        font-family: "Roboto", sans-serif;
         padding: 1em;
         background: white;
         border: 1px solid rgba(0, 0, 0, 0.2);
@@ -290,7 +304,7 @@ p, li {
     .container .article .title h1, .container .article .title h4 {
       text-align: center; }
     .container .article .topic {
-      font-family: Raleway;
+      font-family: "Lato", sans-serif;
       text-align: left !important;
       color: rgba(0, 0, 0, 0.8);
       font-weight: lighter; }
@@ -301,10 +315,6 @@ p, li {
       word-spacing: 0.2em;
       line-height: 1.2em;
       word-wrap: break-word; }
-      .container .article .content p {
-        line-spacing: 0.5em;
-        word-spacing: 0.4em;
-        line-height: 1.3em; }
       .container .article .content h3, .container .article .content ul, .container .article .content li, .container .article .content h2, .container .article .content a, .container .article .content h1, .container .article .content p {
         margin-top: 1em; }
       .container .article .content h2 {
