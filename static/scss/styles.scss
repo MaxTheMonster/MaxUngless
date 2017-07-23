@@ -234,7 +234,7 @@ p, li {
 		flex-grow: 1;
 		margin: 1em 2.5em;
 		width: 30%;
-
+		
 		&:hover {
 			-webkit-box-shadow: 10px 5px 0px 0px rgba(255,210,0,1);
 			-moz-box-shadow: 10px 5px 0px 0px rgba(255,210,0,1);
@@ -243,7 +243,7 @@ p, li {
 		}
 	}
 
-	.article {
+	.article-detail {
 		word-wrap: break-word;
 
 		.buttons {

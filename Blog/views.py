@@ -4,6 +4,7 @@ from . import models
 
 class IndexView(generic.ListView):
     model = models.Article
+    context_object_name = "articles"
     template_name = "Blog/index.html"
 
 
