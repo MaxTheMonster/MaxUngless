@@ -5,7 +5,7 @@
 <div class="container">
   <div class="description card">
     <div class="inner">
-      <p>My name is Max Ungless and I am an aspiring web and software developer living in London. I began programming 5 years ago with a visual tool called <a href="http://scratch.mit.edu">Scratch</a> and since then my obsession with <a href="/topics/coding">programming</a> has only grown. Now I specialise in building web applications with a wide array of languages including HTML, CSS, JavaScript, Django (Python), and PHP. I have built several websites and applications, which you can check out at <a href="/work">My Work</a> that have not only made my days fun, but helped others. Whilst not endlessly coding, I enjoy writing with my fountain pens, a particularly fun pastime of mine which you can read some articles about down below and I also study. You can also read articles about that below.</p>
+      <p>My name is Max Ungless and I am an aspiring web and software developer living in London. I began programming 5 years ago with a visual tool called <a href="http://scratch.mit.edu">Scratch</a> and since then my obsession with <a href="{% url 'topic_detail' 'programming' %}">programming</a> has only grown. Now I specialise in building web applications with a wide array of languages including HTML, CSS, JavaScript, Django (Python), and PHP. I have built several websites and applications, which you can check out at <a href="{% url 'work' %}">My Work</a> that have not only made my days fun, but helped others. Whilst not endlessly coding, I enjoy writing with my fountain pens, a particularly fun pastime of mine which you can read some articles about down below and I also study. You can also read articles about that below.</p>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
   </div>
 
   <div class="post card">
-    <a href="/work">
+    <a href="{% url 'work' %}">
       <div class="inner">
         <h2><i class="fa fa-list" aria-hidden="true"></i>&nbsp; Check out my work</h2>
       </div>
@@ -30,7 +30,7 @@
   </div>
   {% for post in posts %}
   <div class="post card">
-    <a href="/posts/{{ post.slug }}">
+    <a href="{% url 'post_detail' post.slug %}">
     <div class="inner">
       <h2><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp; {{ post.title }}</h2>
       <h4>{{ post.published }}</h4>
