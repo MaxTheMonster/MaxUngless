@@ -21,19 +21,19 @@
     </div>
   </div>
 
-  <div class="post card">
+  <div class="article card">
     <a href="{% url 'work' %}">
       <div class="inner">
         <h2><i class="fa fa-list" aria-hidden="true"></i>&nbsp; Check out my work</h2>
       </div>
     </a>
   </div>
-  {% for post in posts %}
-  <div class="post card">
-    <a href="{% url 'post_detail' post.slug %}">
+  {% for article in articles %}
+  <div class="article card">
+    <a href="{% url 'article_detail' article.slug %}">
     <div class="inner">
-      <h2><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp; {{ post.title }}</h2>
-      <h4>{{ post.published }}</h4>
+      <h2><i class="fa fa-newspaper-o" aria-hidden="true"></i>&nbsp; {{ article.title }}</h2>
+      <h4>{{ article.published }}</h4>
     </div>
     </a>
   </div>

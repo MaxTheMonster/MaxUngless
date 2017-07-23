@@ -8,7 +8,7 @@
   {% for article in articles %}
   <div class="card">
     <div class="inner">
-      <a href="/posts/{{ article.slug }}/">
+      <a href="{% url 'article_detail' article.slug %}">
         <h2>{{ article.title }}</h2>
         <h4>{{ article.published }}</h4>
       </a>

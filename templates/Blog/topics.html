@@ -7,7 +7,7 @@
   {% for topic in topics %}
   <div class="card">
     <div class="inner">
-      <a href="/topics/{{ topic.name|lower }}">
+      <a href="{% url 'topic_detail' topic.slug %}">
         <h1>{{ topic.name }}</h1>
       </a>
     </div>

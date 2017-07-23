@@ -3,14 +3,14 @@ from django.views import generic
 from . import models
 
 class IndexView(generic.ListView):
-    model = models.Post
+    model = models.Article
     template_name = "Blog/index.html"
 
 
-class PostDetailView(generic.DetailView):
-    model = models.Post
+class ArticleDetailView(generic.DetailView):
+    model = models.Article
     slug_url_kwarg = "slug"
-    template_name = "Blog/post.html"
+    template_name = "Blog/article.html"
 
 
 class TopicListView(generic.ListView):
@@ -27,7 +27,7 @@ class TopicDetailView(generic.DetailView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(TopicDetailView, self).get_context_data(**kwargs)
-        context["articles"] = models.Post.objects.filter(topic=self.obj)
+        context["articles"] = models.Article.objects.filter(topic=self.obj)
         return context
 
 # def view_topics(request):
@@ -37,25 +37,25 @@ class TopicDetailView(generic.DetailView):
 # def topic(request, user_topic):
 #     print(user_topic)
 #     user_topic = user_topic.title()
-#     articles = Post.objects.filter(topic__name=user_topic)
+#     articles = Article.objects.filter(topic__name=user_topic)
 
 #     if not articles:
 #         articles = []
 #     return render(request, "Blog/topic.html", {"articles": articles, "topic": user_topic})
 # def index(request):
-#     posts = Post.objects.all()
+#     Articles = Article.objects.all()
 
-#     if not posts:
-#         posts = {}
-#     return render(request, "Blog/index.html", {"posts": posts})
+#     if not Articles:
+#         Articles = {}
+#     return render(request, "Blog/index.html", {"Articles": Articles})
 
-# def view_post(request, post_slug):
-#     print(post_slug)
+# def view_Article(request, Article_slug):
+#     print(Article_slug)
 #     try:
-#         post = Post.objects.get(slug=post_slug)
-#         print(post)
-#     except Post.DoesNotExist:
+#         Article = Article.objects.get(slug=Article_slug)
+#         print(Article)
+#     except Article.DoesNotExist:
 #         raise Http404
 
-#     return render(request, "Blog/post.html", {"post": post})
+#     return render(request, "Blog/Article.html", {"Article": Article})
 

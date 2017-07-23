@@ -19,7 +19,7 @@ class Topic(models.Model):
         return reverse("topic_detail", kwargs={"slug": self.slug})
 
 
-class Post(models.Model):
+class Article(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
     slug = models.SlugField(editable=False)
@@ -30,9 +30,9 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post_detail", kwargs={"post_slug": self.slug})
+        return reverse("article_detail", kwargs={"slug": self.slug})
 
     def save(self, *args, **kwargs):
         if not self.pk:
             self.slug = slugify(self.title)
-        return super(Post, self).save(*args, **kwargs)
+        return super(Article, self).save(*args, **kwargs)

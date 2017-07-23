@@ -215,6 +215,7 @@ p, li {
   /* Instead use this non-standard one: */
   word-break: break-word; }
   .card .inner {
+    color: black;
     padding: 2em; }
   .card h3.url {
     word-break: break-all;
@@ -272,11 +273,11 @@ p, li {
         left: 0;
         width: 100%;
         height: 100%; }
-  .container .post {
+  .container .article {
     flex-grow: 1;
     margin: 1em 2.5em;
     width: 30%; }
-    .container .post:hover {
+    .container .article:hover {
       -webkit-box-shadow: 10px 5px 0px 0px #ffd200;
       -moz-box-shadow: 10px 5px 0px 0px #ffd200;
       box-shadow: 10px 5px 0px 0px #ffd200;
@@ -337,7 +338,7 @@ p, li {
   .card {
     margin: 1em 0.2em; }
 
-  .container .post {
+  .container .article {
     margin: 1em 0;
     flex-grow: 2;
     width: 60%; }
