@@ -335,22 +335,32 @@ p, li {
     margin-left: 0.2em; }
 
   .card {
-    margin: 1em 0.2em; }
+    margin: 0.5em 0.2em; }
+    .card .inner {
+      padding: 1.2em; }
 
-  .container .article {
-    margin: 1em 0;
-    flex-grow: 2;
-    width: 60%; }
-  .container .article .buttons {
-    position: auto; }
-    .container .article .buttons .back {
-      padding: 0;
-      border: 0;
-      background: transparent; }
-  .container .article .inner {
-    padding: 1em; }
-  .container .article .content {
-    font-size: 15px; } }
+  .container {
+    margin: 0.1em auto; }
+    .container .article {
+      margin: 1em 0;
+      flex-grow: 2;
+      width: 60%; }
+    .container .article-detail {
+      margin-bottom: 1em; }
+      .container .article-detail .buttons {
+        display: none;
+        right: 1em;
+        left: initial; }
+        .container .article-detail .buttons .back {
+          padding: 0.2em;
+          border: 0;
+          background: white; }
+      .container .article-detail .inner {
+        padding: 0.7em; }
+        .container .article-detail .inner .topic {
+          text-align: center !important; }
+      .container .article-detail .content {
+        font-size: 15px; } }
 @media screen and (max-width: 1150px) {
   .container {
     width: 90%; } }

@@ -327,9 +327,14 @@ p, li {
 		margin-left: 0.2em;
 	}
 	.card {
-		margin: 1em 0.2em;
+		margin: 0.5em 0.2em;
+		
+		.inner {
+			padding: 1.2em;
+		}
 	}
 	.container {
+		margin: 0.1em auto;
 
 		.article {
 			margin: 1em 0;
@@ -337,17 +342,27 @@ p, li {
 			width: 60%;
 		}
 
-		.article {
+		.article-detail {
+			margin-bottom: 1em;
+	
 			.buttons {
-				position: auto;
+				display: none;
+				right: 1em;
+				left: initial;
+				
 				.back {
-					padding: 0;
+					padding: 0.2em;
 					border: 0;
-					background: transparent;
+					background: white;
 				}
 			}
+
 			.inner {
-				padding: 1em;
+  				padding: 0.7em;
+				
+				.topic {
+					text-align: center !important;
+				}
 			}
 			.content {
 				font-size: 15px;
